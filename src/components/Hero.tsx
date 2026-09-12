@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Search, Sparkles, BookOpen, Clock, ArrowRight } from 'lucide-react';
+import { Clock, BookOpen, MessageSquare, Compass, ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (tab: 'timeline' | 'sources' | 'watson' | 'deduction') => void;
@@ -7,109 +7,118 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-[#10141d] via-[#0d0f17] to-[#0b0c10] pt-12 pb-16 border-b border-[#c99a4e]/20">
+    <section className="relative overflow-hidden bg-black text-[#f5f5f7] pt-20 pb-24 border-b border-white/10">
       
-      {/* Background Subtle Glow & Fog Effect */}
-      <div className="absolute inset-0 bg-fog-pattern opacity-40 pointer-events-none" />
-      <div className="absolute -top-40 right-1/4 w-96 h-96 bg-[#c99a4e]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#721c24]/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle Background Glow (Apple-style subtle gradient spotlight) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#333338]/20 to-transparent blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto space-y-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
+        
+        {/* Apple Sub-badge */}
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#1c1c1e] border border-white/10 text-[12px] font-medium text-[#86868b]">
+          <span>The Complete Canon Chronology & Interactive Archive</span>
+        </div>
+
+        {/* Hero Headline (Apple Typography) */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+          Sherlock Holmes. <br />
+          <span className="text-[#86868b] font-serif italic">聖典作中行動年表と原典アーカイブ</span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-base sm:text-lg text-[#86868b] max-w-2xl mx-auto leading-relaxed font-normal">
+          1854年の生誕から、ワトソンとの出会い、数々の怪事件、そしてサセックスでの隠遁まで。
+          ホームズが作中で行ったすべての行動と、その根拠となる聖典60作品の原典ソースを体系化。
+        </p>
+
+        {/* Apple Style Action Buttons */}
+        <div className="pt-2 flex flex-wrap justify-center gap-4">
+          <button
+            onClick={() => onNavigate('timeline')}
+            className="apple-button-primary px-6 py-3 text-sm flex items-center space-x-2"
+          >
+            <span>年表アーカイブを探索</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+
+          <button
+            onClick={() => onNavigate('sources')}
+            className="apple-button-secondary px-6 py-3 text-sm flex items-center space-x-2"
+          >
+            <span>原典ソースカタログ</span>
+          </button>
+        </div>
+
+        {/* Apple Feature Grid (Minimal Product Cards) */}
+        <div className="pt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
           
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-[#c99a4e]/40 bg-[#c99a4e]/10 backdrop-blur-md">
-            <Compass className="w-4 h-4 text-[#c99a4e] animate-spin" style={{ animationDuration: '20s' }} />
-            <span className="text-xs font-semibold tracking-wider text-[#e5b362] uppercase font-cinzel">
-              Canon Chronology & AI Intelligence Hub
-            </span>
+          <div 
+            onClick={() => onNavigate('timeline')}
+            className="apple-card p-6 cursor-pointer group"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <Clock className="w-5 h-5 text-[#f5f5f7]" />
+              <span className="text-[11px] font-mono text-[#86868b]">1854–1914</span>
+            </div>
+            <h3 className="text-base font-semibold text-white group-hover:text-[#e3c07b] transition-colors">
+              生涯全作中年表
+            </h3>
+            <p className="text-xs text-[#86868b] mt-1 leading-relaxed">
+              聖典全60作品から抽出した具体的行動履歴と年代順記録。
+            </p>
           </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-cinzel text-white leading-tight">
-            シャーロック・ホームズ <br />
-            <span className="text-gold-gradient font-serif-custom italic">聖典年表 & 原典アーカイブ</span>
-          </h1>
-
-          {/* Description */}
-          <p className="text-base sm:text-lg text-gray-300 font-sans leading-relaxed">
-            1854年の生誕から、ワトソンとの運命の出会い、ライヘンバッハの滝での死闘、そしてサセックスでの隠遁生活まで。
-            ホームズが作中で残した具体的な行動と、すべての根拠となる<strong className="text-[#c99a4e]">原典ソース（全60作品）</strong>をAIスキルとともに体系化したポータルサイト。
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="pt-4 flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => onNavigate('timeline')}
-              className="flex items-center space-x-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-[#c99a4e] to-[#aa7c11] text-black font-bold text-sm tracking-wide shadow-lg hover:brightness-110 transition-all transform hover:-translate-y-0.5"
-            >
-              <Clock className="w-5 h-5" />
-              <span>聖典年表を見る</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </button>
-
-            <button
-              onClick={() => onNavigate('watson')}
-              className="flex items-center space-x-2 px-6 py-3.5 rounded-lg border border-[#c99a4e]/40 bg-black/40 hover:bg-[#c99a4e]/15 text-white font-medium text-sm transition-all"
-            >
-              <Sparkles className="w-5 h-5 text-[#c99a4e]" />
-              <span>AI ワトソン君と対話する</span>
-            </button>
+          <div 
+            onClick={() => onNavigate('sources')}
+            className="apple-card p-6 cursor-pointer group"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <BookOpen className="w-5 h-5 text-[#f5f5f7]" />
+              <span className="text-[11px] font-mono text-[#86868b]">60 Works</span>
+            </div>
+            <h3 className="text-base font-semibold text-white group-hover:text-[#e3c07b] transition-colors">
+              原典ソース根拠
+            </h3>
+            <p className="text-xs text-[#86868b] mt-1 leading-relaxed">
+              該当作品・章・節および原典引用テキストを厳密に照合。
+            </p>
           </div>
 
-          {/* Feature Badges */}
-          <div className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-            <div 
-              onClick={() => onNavigate('timeline')}
-              className="glass-card p-4 rounded-xl cursor-pointer hover:border-[#c99a4e]/50 group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <Clock className="w-5 h-5 text-[#c99a4e]" />
-                <span className="text-[10px] text-gray-400 uppercase tracking-widest font-cinzel">1854-1914</span>
-              </div>
-              <h3 className="text-sm font-bold text-white group-hover:text-[#c99a4e] transition-colors">生涯全作中年表</h3>
-              <p className="text-xs text-gray-400 mt-1">ホームズの具体的な行動記録と年代順一覧</p>
+          <div 
+            onClick={() => onNavigate('watson')}
+            className="apple-card p-6 cursor-pointer group"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <MessageSquare className="w-5 h-5 text-[#f5f5f7]" />
+              <span className="text-[11px] text-[#86868b]">Dialogue</span>
             </div>
+            <h3 className="text-base font-semibold text-white group-hover:text-[#e3c07b] transition-colors">
+              ワトソン対話室
+            </h3>
+            <p className="text-xs text-[#86868b] mt-1 leading-relaxed">
+              ワトソン博士の記録に基づくインタラクティブ対話アーキテクチャ。
+            </p>
+          </div>
 
-            <div 
-              onClick={() => onNavigate('sources')}
-              className="glass-card p-4 rounded-xl cursor-pointer hover:border-[#c99a4e]/50 group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <BookOpen className="w-5 h-5 text-[#c99a4e]" />
-                <span className="text-[10px] text-gray-400 uppercase tracking-widest font-cinzel">60 Works</span>
-              </div>
-              <h3 className="text-sm font-bold text-white group-hover:text-[#c99a4e] transition-colors">原典ソース証明</h3>
-              <p className="text-xs text-gray-400 mt-1">登場作品・章・原典引用テキストを明記</p>
+          <div 
+            onClick={() => onNavigate('deduction')}
+            className="apple-card p-6 cursor-pointer group"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <Compass className="w-5 h-5 text-[#f5f5f7]" />
+              <span className="text-[11px] text-[#86868b]">Deduction</span>
             </div>
-
-            <div 
-              onClick={() => onNavigate('watson')}
-              className="glass-card p-4 rounded-xl cursor-pointer hover:border-[#c99a4e]/50 group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <Sparkles className="w-5 h-5 text-[#c99a4e]" />
-                <span className="text-[10px] text-gray-400 uppercase tracking-widest font-cinzel">AI Agent</span>
-              </div>
-              <h3 className="text-sm font-bold text-white group-hover:text-[#c99a4e] transition-colors">AI ワトソン相談室</h3>
-              <p className="text-xs text-gray-400 mt-1">聖典知識を持つAIとの対話＆カード案内</p>
-            </div>
-
-            <div 
-              onClick={() => onNavigate('deduction')}
-              className="glass-card p-4 rounded-xl cursor-pointer hover:border-[#c99a4e]/50 group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <Search className="w-5 h-5 text-[#c99a4e]" />
-                <span className="text-[10px] text-gray-400 uppercase tracking-widest font-cinzel">AI Deduction</span>
-              </div>
-              <h3 className="text-sm font-bold text-white group-hover:text-[#c99a4e] transition-colors">AI 演繹推理室</h3>
-              <p className="text-xs text-gray-400 mt-1">観察手がかりからのホームズ風推論体験</p>
-            </div>
+            <h3 className="text-base font-semibold text-white group-hover:text-[#e3c07b] transition-colors">
+              演繹考察ラボ
+            </h3>
+            <p className="text-xs text-[#86868b] mt-1 leading-relaxed">
+              観察手がかりからホームズの推論プロセスを科学的に再構成。
+            </p>
           </div>
 
         </div>
+
       </div>
-    </div>
+    </section>
   );
 };

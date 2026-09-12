@@ -3,77 +3,115 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --apple-bg: #000000;
+    --apple-card: #1c1c1e;
+    --apple-card-hover: #2c2c2e;
+    --apple-subcard: #2c2c2e;
+    --apple-border: rgba(255, 255, 255, 0.12);
+    --apple-text: #f5f5f7;
+    --apple-subtext: #86868b;
+    --apple-accent: #e3c07b;
+  }
+
   body {
-    background-color: #0b0c10;
-    color: #e2e8f0;
-    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    color: #f5f5f7;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", sans-serif;
+    letter-spacing: -0.015em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, .font-cinzel {
-    font-family: 'Cinzel', serif;
-  }
-
-  .font-serif-custom {
-    font-family: 'Playfair Display', Georgia, serif;
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
   }
 }
 
-/* Custom Scrollbar */
+/* Apple-style Glassmorphism */
+.apple-glass {
+  background: rgba(28, 28, 30, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apple-header-glass {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-b: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Apple Card Aesthetics */
+.apple-card {
+  background-color: #1c1c1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem; /* rounded-2xl */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  background-color: #26262a;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Apple Button */
+.apple-button-primary {
+  background-color: #f5f5f7;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-button-primary:hover {
+  background-color: #ffffff;
+  transform: scale(1.02);
+}
+
+.apple-button-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f5f5f7;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-button-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Apple iMessage / Chat Bubble */
+.apple-message-user {
+  background-color: #007aff;
+  color: #ffffff;
+  border-radius: 1.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.apple-message-watson {
+  background-color: #2c2c2e;
+  color: #f5f5f7;
+  border-radius: 1.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1117;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a3347;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c99a4e;
-}
-
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(20, 23, 29, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 154, 78, 0.18);
-}
-
-.glass-card {
-  background: rgba(26, 31, 42, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  border-color: rgba(201, 154, 78, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px -10px rgba(201, 154, 78, 0.15);
-}
-
-.text-gold-gradient {
-  background: linear-gradient(135deg, #d4af37 0%, #f3d489 50%, #aa7c11 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Glowing Accent */
-.glow-gold {
-  box-shadow: 0 0 20px rgba(201, 154, 78, 0.25);
-}
-
-/* Timeline Custom line pulse */
-@keyframes pulse-line {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
-}
-
-.timeline-glow-line {
-  animation: pulse-line 3s infinite ease-in-out;
+  background: rgba(255, 255, 255, 0.4);
 }

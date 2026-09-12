@@ -7,26 +7,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        victorian: {
-          dark: "#0b0c10",
-          paper: "#f7f4ea",
-          card: "#14171d",
-          accent: "#c99a4e", // Brass Gold
-          accentHover: "#e5b362",
-          crimson: "#721c24", // Burgundy / Crimson
-          deepBlue: "#1a233a",
-          border: "#2d3446",
-          subtle: "#8e99ac",
+        apple: {
+          bg: "#000000",
+          card: "#1c1c1e",
+          cardHover: "#2c2c2e",
+          subcard: "#2c2c2e",
+          border: "rgba(255, 255, 255, 0.12)",
+          text: "#f5f5f7",
+          subtext: "#86868b",
+          gold: "#d4af37",
+          goldMuted: "#a3842c",
+          blue: "#007aff",
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        cinzel: ['"Cinzel"', 'serif'],
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Display"',
+          '"SF Pro Text"',
+          '"Inter"',
+          'sans-serif',
+        ],
+        serif: [
+          '"Playfair Display"',
+          'Georgia',
+          'serif',
+        ]
       },
-      backgroundImage: {
-        'fog-pattern': "radial-gradient(circle at 50% 50%, rgba(201, 154, 78, 0.05) 0%, transparent 60%)",
-        'gold-gradient': "linear-gradient(135deg, #c99a4e 0%, #f3d489 50%, #9e752f 100%)",
+      borderRadius: {
+        '2xl': '1.25rem',
+        '3xl': '1.75rem',
       }
     },
   },
