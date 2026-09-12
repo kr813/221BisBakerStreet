@@ -15,8 +15,8 @@ export const Footer: React.FC = () => {
               </div>
               <span className="text-sm font-semibold text-white">221B Baker Street</span>
             </div>
-            <p className="text-xs text-[#86868b] leading-relaxed">
-              シャーロック・ホームズ作中行動年表・原典ソース・対話アーカイブ。
+            <p className="text-xs text-[#86868b]">
+              221B Baker Street Archive.
             </p>
             <div className="text-[11px] text-[#86868b] italic">
               "The game is afoot!" — Arthur Conan Doyle

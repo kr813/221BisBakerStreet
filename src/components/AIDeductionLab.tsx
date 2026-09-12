@@ -95,12 +95,9 @@ export const AIDeductionLab: React.FC<AIDeductionLabProps> = ({ onNavigateTimeli
         <span className="text-xs font-semibold uppercase tracking-wider text-[#86868b] block">
           Science of Observation & Analysis
         </span>
-        <h2 className="text-3xl font-extrabold text-white">
+        <h2 className="text-3xl font-bold text-white tracking-tight">
           演繹考察ラボ
         </h2>
-        <p className="text-sm text-[#86868b]">
-          観察の手がかりを入力すると、シャーロック・ホームズの演繹法（Deduction）を再現して考察ステップを算出します。
-        </p>
       </div>
 
       {/* Apple Inspector Panel */}

@@ -111,12 +111,9 @@ export const AIWatsonAssistant: React.FC<AIWatsonAssistantProps> = ({ onNavigate
         <span className="text-xs font-semibold uppercase tracking-wider text-[#86868b] block">
           Interactive Dialogue Archive
         </span>
-        <h2 className="text-3xl font-extrabold text-white">
+        <h2 className="text-3xl font-bold text-white tracking-tight">
           ワトソン対話室
         </h2>
-        <p className="text-sm text-[#86868b]">
-          ジョン・H・ワトソン博士の記録に基づくインタラクティブ対話インターフェース。
-        </p>
       </div>
 
       {/* iMessage Style Container */}

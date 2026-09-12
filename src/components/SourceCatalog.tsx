@@ -34,12 +34,9 @@ export const SourceCatalog: React.FC<SourceCatalogProps> = ({ onSelectTimelineIt
         <span className="text-xs font-semibold uppercase tracking-wider text-[#86868b] block mb-1">
           Primary Canon Archive
         </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-          聖典原典ソース カタログ
+        <h2 className="text-3xl font-bold text-white tracking-tight">
+          原典ソースカタログ
         </h2>
-        <p className="text-sm text-[#86868b] mt-2 max-w-2xl">
-          アーサー・コナン・ドイル卿の長編4作・短編56作の作品仕様データと、作品に紐づく作中行動年表エントリの逆引き。
-        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

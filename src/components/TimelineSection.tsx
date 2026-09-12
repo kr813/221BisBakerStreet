@@ -47,12 +47,9 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ highlightId })
           <span className="text-xs font-semibold uppercase tracking-wider text-[#86868b] block mb-1">
             Chronology & Actions
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl font-bold text-white tracking-tight">
             作中行動年表
           </h2>
-          <p className="text-sm text-[#86868b] mt-2 max-w-2xl">
-            聖典全60作品から編纂したホームズの具体的行動と事件履歴。すべての出来事に原典ソースを提示。
-          </p>
         </div>
 
         <div className="text-xs text-[#86868b] bg-[#1c1c1e] px-4 py-2 rounded-full border border-white/10 self-start md:self-auto">
